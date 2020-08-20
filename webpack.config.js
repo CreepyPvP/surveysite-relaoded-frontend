@@ -10,7 +10,8 @@ module.exports = {
       path: pathConst.join(__dirname, "dist"),
     },
     devServer: {
-      contentBase: pathConst.join(__dirname, 'dist'),
+      contentBase: "./dist",
+      writeToDisk: true,
       compress: true,
       port: 9000
     },
