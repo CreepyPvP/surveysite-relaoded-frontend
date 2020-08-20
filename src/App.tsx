@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.scss';
+import UserIcon from './components/basic/UserIcon';
+import { UserPreview } from './dto/UserRequests';
 
 
 type AppComponentState = {
@@ -13,8 +15,14 @@ class App extends React.Component<{}, AppComponentState> {
   }
 
   render() {
+    const userPreview: UserPreview = {
+      id: 1,
+      permissionRank: {color: "#00ff00"},
+      username: "Luis D.",
+      profilePictureLink: "logo192.png"
+    }
     return(
-      	<div>hello world</div>
+      	<UserIcon preview={userPreview} />
     )
   }
 

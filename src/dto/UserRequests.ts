@@ -8,3 +8,12 @@ export type UserFullRequest = {
 
     permissionRank: Rank
 }
+
+
+export type UserPreview = {
+    username: string,
+    id: number,
+    profilePictureLink: string,
+
+    permissionRank: {color: string}
+}
