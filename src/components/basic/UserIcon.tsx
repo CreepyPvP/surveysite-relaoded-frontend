@@ -8,7 +8,7 @@ function userIcon(userPreview: {preview: UserPreview}) {
     return (
         <div className={"user-icon"}>
             <img src={userPreview.preview.profilePictureLink} alt={"User Pic"} />
-            <Link to={"/user"} style={{color: userPreview.preview.permissionRank.color}}>{userPreview.preview.username}</Link>
+            <Link to={"/user/"+userPreview.preview.id} style={{color: userPreview.preview.permissionRank.color}}>{userPreview.preview.username}</Link>
         </div>
     )
 }
