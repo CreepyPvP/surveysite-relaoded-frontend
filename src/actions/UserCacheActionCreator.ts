@@ -2,14 +2,14 @@ import { UserPreview } from "../dto/UserRequests";
 
 export function clearUserCache() {
     return {
-        type: "CLEAR",
+        type: "USER_PREVIEW_CLEAR",
         payload: {}
     }
 }
 
 export function updateUserCachePreview(userPreview: UserPreview) {
     return {
-        type: "UPDATE_USER_PREVIEW",
+        type: "USER_PREVIEW_UPDATE",
         payload: userPreview
     }
 }

@@ -12,7 +12,7 @@ type UserProfilePageState = {
 
 type UserProfilePageProps = {
     match: any,
-    userCache: { userPreviewCache: any } 
+    userCache: { cache: any } 
 }
 
 
@@ -30,7 +30,7 @@ class UserProfilePage extends React.Component<UserProfilePageProps, UserProfileP
 
 
     render() {
-        const user: UserPreview = this.props.userCache.userPreviewCache[this.state.userId];
+        const user: UserPreview = this.props.userCache.cache[this.state.userId];
         if(user) {
             return (
                 <div>
