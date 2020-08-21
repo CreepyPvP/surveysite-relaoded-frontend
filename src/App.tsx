@@ -5,8 +5,6 @@ import { UserPreview } from './dto/UserRequests';
 import userIcon from './components/basic/UserIcon';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import UserProfilePage from './components/user/UserProfile';
-import store from './store';
-import { updateUserCachePreview } from './actions/UserCacheActionCreator';
 
 
 type AppComponentState = {
@@ -26,7 +24,6 @@ class App extends React.Component<{}, AppComponentState> {
       username: "Luis D.",
       profilePictureLink: "meme.jpg"
     }
-    store.dispatch(updateUserCachePreview(userPreview))
     return(
       <Router>
         <Switch>

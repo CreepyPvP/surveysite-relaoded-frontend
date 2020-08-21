@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { UserPreview, UserProfileData } from "../../dto/UserRequests";
 import Spinner from 'react-bootstrap/Spinner'
 import { connect } from "react-redux";
+import { loadToCache } from "../../util/CacheManager";
 
 
 type UserProfilePageState = {
@@ -31,6 +32,12 @@ class UserProfilePage extends React.Component<UserProfilePageProps, UserProfileP
 
     render() {
         const user: UserPreview = this.props.userCache.cache[this.state.userId];
+        const userToLoad: UserPreview = {
+            id: 1,
+            permissionRank: {color: "#00ff00"},
+            profilePictureLink: "meme.jpg",
+            username: "Luis D."
+        }
         if(user) {
             return (
                 <div>
@@ -38,6 +45,7 @@ class UserProfilePage extends React.Component<UserProfilePageProps, UserProfileP
                 </div>
             )
         } else {
+            loadToCache("USER_PREVIEW", userToLoad)
             return (
                 <div className={"loading"}>
                     <Spinner animation="border" variant="primary" />
